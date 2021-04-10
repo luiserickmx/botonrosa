@@ -1,0 +1,165 @@
+// Tipografía //
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spectral:wght@700&display=swap');
+$texto-tipografia: 'Source Sans Pro',
+sans-serif;
+$logo-tipografia: 'Spectral',
+serif;
+
+// Tamaños de textos //
+$heading1: 40px;
+$heading2: 28px;
+$heading3: 22px;
+$parrafo: 18px;
+$logo: 36px;
+
+// Pesos //
+$regular: 400;
+$semi-bold: 600;
+$bold: 700;
+
+// Colores //
+$blanco: hsl(0, 0%, 100%);
+$texto: hsl(247, 53%, 10%);
+$morado: hsl(247, 52%, 50%);
+$gradiente-suave: linear-gradient(to right, hsl(247, 52%, 70%), hsl(298, 100%, 80%));
+$gradiente-fuerte: linear-gradient(to right, hsla(298, 100%, 80%, 0.175) 25%, hsla(247, 52%, 50%, 0.175));
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $texto-tipografia;
+}
+
+h1 {
+    font-size: $heading1;
+    font-weight: $bold;
+}
+
+h2 {
+    font-size: $heading2;
+    font-weight: $bold;
+}
+
+h3 {
+    font-size: $heading3;
+    font-weight: $bold;
+}
+
+// Header principal
+header {
+    height: 100vh;
+    background: $gradiente-fuerte, url(../img/header_background.jpg);
+    background-blend-mode: hard-light;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: $blanco;
+
+    nav {
+        height: 10%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 0px 120px;
+        justify-content: space-between;
+        align-items: center;
+        // border: 2px solid red;
+
+        .logo {
+            font-family: $logo-tipografia;
+            text-decoration: none;
+            color: $blanco;
+            font-size: $logo;
+        }
+
+        ul {
+            display: inline-block;
+            list-style: none;
+
+            a {
+                color: $blanco;
+                margin: 0px 16px;
+                text-decoration: none;
+
+                &:first-child {
+                    margin-left: 0px;
+                }
+
+                &:last-child {
+                    margin-right: 0px;
+                }
+
+                li {
+                    display: inline;
+                    font-weight: $semi-bold;
+                }
+            }
+        }
+    }
+
+    .presentacion {
+        height: 90%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0px 120px;
+        // border: 2px solid red;
+
+        .txt--header {
+            width: 50%;
+            
+            h1 {
+                margin: 0px;
+                margin-bottom: 16px;
+                line-height: 48px;
+                letter-spacing: .2px;
+            }
+
+            p {
+                font-size: $texto;
+                line-height: 24px;
+                margin: 0px;
+                margin-bottom: 32px;
+                letter-spacing: .2px;
+            }
+
+            .btn {
+                display: inline-block;
+                padding: 16px 20px;
+                background: $morado;
+                border-radius: 8px;
+                font-weight: $semi-bold;
+
+                a {
+                    text-decoration: none;
+                    color: $blanco;
+
+                    i {
+                        margin-right: 12px;
+                        vertical-align: middle;
+                        line-height: 11px;
+                    }
+                }
+            }
+        }
+
+        .img--header {
+            width: 520px;
+            height: 520px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                height: 520px;
+            }
+        }
+    }
+}
