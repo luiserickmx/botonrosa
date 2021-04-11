@@ -25,6 +25,8 @@ $morado: hsl(247, 52%, 50%);
 $gradiente-suave: linear-gradient(to right, hsl(247, 52%, 70%), hsl(298, 100%, 80%));
 $gradiente-fuerte: linear-gradient(to right, hsla(298, 100%, 80%, 0.175) 25%, hsla(247, 52%, 50%, 0.175));
 
+// Normalizar estilos //
+
 *,
 *::before,
 *::after {
@@ -37,20 +39,32 @@ body {
 
 h1 {
     font-size: $heading1;
+    letter-spacing: .2px;
     font-weight: $bold;
 }
 
 h2 {
     font-size: $heading2;
+    letter-spacing: .2px;
     font-weight: $bold;
 }
 
 h3 {
     font-size: $heading3;
+    letter-spacing: .2px;
     font-weight: $bold;
 }
 
-// Header principal
+p {
+    font-size: $texto;
+}
+
+strong {
+    font-weight: $semi-bold;
+}
+
+// Header principal //
+
 header {
     height: 100vh;
     background: $gradiente-fuerte, url(../img/header_background.jpg);
@@ -114,12 +128,11 @@ header {
 
         .txt--header {
             width: 50%;
-            
+
             h1 {
                 margin: 0px;
                 margin-bottom: 16px;
                 line-height: 48px;
-                letter-spacing: .2px;
             }
 
             p {
@@ -127,19 +140,18 @@ header {
                 line-height: 24px;
                 margin: 0px;
                 margin-bottom: 32px;
-                letter-spacing: .2px;
             }
 
-            .btn {
-                display: inline-block;
-                padding: 16px 20px;
-                background: $morado;
-                border-radius: 8px;
-                font-weight: $semi-bold;
+            a {
+                text-decoration: none;
+                color: $blanco;
 
-                a {
-                    text-decoration: none;
-                    color: $blanco;
+                .btn {
+                    display: inline-block;
+                    padding: 16px 20px;
+                    background: $morado;
+                    border-radius: 8px;
+                    font-weight: $semi-bold;
 
                     i {
                         margin-right: 12px;
@@ -156,9 +168,78 @@ header {
             display: flex;
             justify-content: center;
             align-items: center;
+            pointer-events: none;
 
             img {
                 height: 520px;
+            }
+        }
+    }
+}
+
+// El proceso //
+
+.contenedor {
+    width: 100%;
+
+    .proceso {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        margin: 80px 120px;
+        margin-bottom: 0px;
+        background: $blanco;
+        // border: 2px solid red;
+    
+        h2 {
+            margin: 0;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+    
+        p {
+            text-align: center;
+            margin: 0;
+            margin-bottom: 60px;
+    
+            strong {
+                font-weight: $semi-bold;
+            }
+        }
+    
+        .fases {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+    
+            .fase {
+                width: 400px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding-left: 10px;
+                padding-right: 10px;
+                margin: auto;
+                margin-bottom: 80px;
+                // border: 1px solid red;
+    
+                img {
+                    height: 80px;
+                    pointer-events: none;
+                }
+    
+                h3 {
+                    margin: 0;
+                    margin-top: 16px;
+                    margin-bottom: 8px;
+                }
+    
+                p {
+                    margin: 0;
+                    opacity: 80%;
+                }
             }
         }
     }
