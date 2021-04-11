@@ -10,7 +10,7 @@ serif;
 $heading1: 40px;
 $heading2: 28px;
 $heading3: 22px;
-$parrafo: 18px;
+$parrafo: 16px;
 $logo: 36px;
 
 // Pesos //
@@ -31,6 +31,10 @@ $gradiente-fuerte: linear-gradient(to right, hsla(298, 100%, 80%, 0.175) 25%, hs
 *::before,
 *::after {
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -56,7 +60,8 @@ h3 {
 }
 
 p {
-    font-size: $texto;
+    font-size: $parrafo;
+    letter-spacing: .1px;
 }
 
 strong {
@@ -136,7 +141,8 @@ header {
             }
 
             p {
-                font-size: $texto;
+                width: 320px;
+                font-size: $parrafo;
                 line-height: 24px;
                 margin: 0px;
                 margin-bottom: 32px;
@@ -163,12 +169,12 @@ header {
         }
 
         .img--header {
-            width: 520px;
             height: 520px;
             display: flex;
             justify-content: center;
             align-items: center;
             pointer-events: none;
+            margin-right: 80px;
 
             img {
                 height: 520px;
@@ -179,8 +185,36 @@ header {
 
 // El proceso //
 
-.contenedor {
+.contenedor--proceso {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
     width: 100%;
+
+    p.descargar--proceso {
+        display: inline-block;
+        font-weight: $bold;
+        margin: 0;
+        margin-bottom: 32px;
+        text-align: center;
+    }
+
+    .btn--proceso {
+        display: inline-block;
+        color: $blanco;
+        padding: 16px 20px;
+        background: $morado;
+        border-radius: 8px;
+        font-weight: 600;
+        margin-bottom: 80px;
+        text-decoration: none;
+
+        i {
+            margin-right: 12px;
+            vertical-align: middle;
+        }
+    }
 
     .proceso {
         display: flex;
@@ -191,29 +225,29 @@ header {
         margin-bottom: 0px;
         background: $blanco;
         // border: 2px solid red;
-    
+
         h2 {
             margin: 0;
             margin-bottom: 16px;
             text-align: center;
         }
-    
+
         p {
             text-align: center;
             margin: 0;
             margin-bottom: 60px;
-    
+
             strong {
                 font-weight: $semi-bold;
             }
         }
-    
+
         .fases {
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
             justify-content: space-between;
-    
+
             .fase {
                 width: 400px;
                 display: flex;
@@ -224,23 +258,226 @@ header {
                 margin: auto;
                 margin-bottom: 80px;
                 // border: 1px solid red;
-    
+
                 img {
                     height: 80px;
                     pointer-events: none;
                 }
-    
+
                 h3 {
+                    text-align: center;
                     margin: 0;
                     margin-top: 16px;
                     margin-bottom: 8px;
                 }
-    
+
                 p {
                     margin: 0;
                     opacity: 80%;
                 }
             }
         }
+    }
+}
+
+// ¿Cómo funciona? //
+
+.contenedor--funcionamiento {
+    width: 100%;
+    background: $morado;
+
+    .funcionamiento {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 0 120px;
+        justify-content: space-around;
+        align-items: center;
+
+        .img--funcionamiento {
+            width: 520px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 80px;
+            margin-bottom: 80px;
+
+            img {
+                width: 100%;
+                pointer-events: none;
+            }
+        }
+
+        .txt--funcionamiento {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            color: $blanco;
+
+            h2 {
+                font-size: 40px;
+                margin: 0;
+                margin-bottom: 16px;
+            }
+
+            p {
+                margin: 0;
+            }
+
+            ul {
+                margin: 0;
+                margin-top: 32px;
+                padding: 0;
+
+                li {
+                    font-weight: $semi-bold;
+                    list-style: none;
+
+                    &:nth-child(2) {
+                        margin-top: 16px;
+                        margin-bottom: 16px;
+                    }
+
+                    i {
+                        vertical-align: middle;
+                        margin-right: 12px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Media QUERIES //
+
+@media screen and (max-width: 1268px) {
+    .contenedor--funcionamiento .funcionamiento .txt--funcionamiento {
+        text-align: center;
+        align-items: center;
+
+        ul {
+            margin-bottom: 80px;
+        }
+    }
+}
+
+@media screen and (max-width: 1100px) {
+
+    header nav,
+    header .presentacion {
+        margin: 0 80px;
+    }
+
+    .contenedor--proceso .proceso {
+        margin: 80px 80px 0 80px;
+    }
+}
+
+@media screen and (max-width: 980px) {
+    header .presentacion .img--header {
+        margin-right: 0;
+    }
+
+    header nav {
+        flex-direction: column;
+        justify-content: space-evenly;
+
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+    }
+}
+
+
+@media screen and (max-width: 930px) {
+    header .presentacion .img--header {
+        height: 400px;
+
+        img {
+            height: 400px;
+        }
+    }
+
+    .contenedor--funcionamiento .funcionamiento {
+        margin: 0 80px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        height: 900px;
+
+        .presentacion {
+            flex-direction: column;
+            justify-content: space-around;
+
+            .txt--header {
+                width: 100%;
+                text-align: center;
+
+                p {
+                    width: auto;
+                }
+            }
+
+            .img--header {
+                height: 320px;
+
+                img {
+                    height: 320px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header nav ul {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 581px) {
+    header {
+        nav {
+            margin: 0 40px;
+        }
+
+        .presentacion {
+            margin: 0 40px;
+        }
+    }
+
+    .contenedor--proceso .proceso {
+        margin: 80px 40px 0 40px;
+    }
+
+    .contenedor--funcionamiento .funcionamiento {
+        margin: 0 40px;
+    }
+}
+
+@media screen and (max-width: 481px) {
+    header {
+        nav {
+            margin: 0 20px;
+        }
+
+        .presentacion {
+            margin: 0 20px;
+        }
+    }
+
+    .contenedor--proceso .proceso {
+        margin: 80px 20px 0 20px;
+    }
+
+    .contenedor--funcionamiento .funcionamiento {
+        margin: 0 20px;
+    }
+
+    .contenedor--proceso .proceso .fases .fase {
+        width: 100%;
     }
 }
