@@ -348,6 +348,77 @@ header {
     }
 }
 
+// El Equipo //
+
+.contenedor--equipo {
+    background: $gradiente-fuerte, url(../img/sobre-nosotros_background.jpg);
+    background-blend-mode: hard-light;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: $blanco;
+    margin: 0;
+
+    .equipo {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 0 120px;
+
+        h2 {
+            margin: 0;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        p {
+            margin: 0;
+            text-align: center;
+            margin-top: 16px;
+            margin-bottom: 60px;
+        }
+
+        .integrantes {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            .integrante {
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                align-items: center;
+                width: 200px;
+                margin: auto;
+                margin-bottom: 80px;
+                padding-right: 20px;
+                padding-left: 20px;
+
+                img {
+                    width: 160px;
+                    height: 150px;
+                    object-fit: cover;
+                    border-radius: 160px;
+                }
+
+                h3 {
+                    margin: 0;
+                    margin-top: 16px;
+                    margin-bottom: 16px;
+                    text-align: center;
+                }
+
+                p {
+                    margin: 0;
+                }
+            }
+        }
+    }
+}
+
 // Media QUERIES //
 
 @media screen and (max-width: 1268px) {
@@ -430,6 +501,12 @@ header {
             }
         }
     }
+
+    .contenedor--equipo {
+        .equipo {
+            margin: 0 80px;
+        }
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -479,5 +556,11 @@ header {
 
     .contenedor--proceso .proceso .fases .fase {
         width: 100%;
+    }
+
+    .contenedor--equipo {
+        .equipo {
+            margin: 0 40px;
+        }
     }
 }
